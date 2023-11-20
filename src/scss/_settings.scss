@@ -87,18 +87,18 @@ a {
   top: -200px;
   left: 15px;
   transition: top 0.3s ease;
-  color: currentColor;
+  color: var(--light-color);
 
   &:focus {
     top: 15px;
-    outline: 2px solid var(--accent);
+    outline: 2px solid currentColor;
     outline-offset: 4px;
   }
 }
 
 .container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
+  margin-inline: auto;
+  padding-inline: var(--container-offset);
   max-width: var(--container-width);
 }
 

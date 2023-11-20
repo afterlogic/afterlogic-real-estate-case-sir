@@ -1,13 +1,20 @@
 :root {
   // base
-  --font-family: "Gilroy", sans-serif;
+  --font-family: "Inter", sans-serif;
   --content-width: 1170px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
-  --light: #ffffff;
+  --light-color: #ffffff;
+  --black-color: #000000;
+  --accent-color: #ff0006;
+  --silver-color: #5a5a5a;
 
-  //size
-  --gap: 25px;
+  //width
+  --width360: 360px;
+
+  //border-radius
+  --border-radius: 40px;
+  --border-radius-section: 40px 40px 0px 0px;
 }

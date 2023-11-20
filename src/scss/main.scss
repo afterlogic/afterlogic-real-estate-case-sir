@@ -3,5 +3,10 @@
 @import "fonts";
 @import "settings";
 
-// подключение компонентов страницы
+// page blocks connection
 @import "./components/header";
+@import "./components/hero";
+
+// page components connection
+@import "./components/nav";
+@import "./components/btn";
