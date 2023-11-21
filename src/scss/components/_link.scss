@@ -1,0 +1,28 @@
+.link {
+  position: relative;
+  color: var(--accent-color);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  padding-right: 32px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    aspect-ratio: 1;
+    background-image: url(../img/arrow-link.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: scale 0.3s ease;
+  }
+
+  @include hover {
+    &::after {
+      scale: 1.2;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.contacts {
+  margin-bottom: 80px;
+
+  &__wrapper {
+    display: flex;
+    gap: var(--gap);
+  }
+
+  &__text {
+    max-width: var(--width360);
+    margin: 0;
+    margin-bottom: 40px;
+    color: var(--black-color);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  &__highlight {
+    display: block;
+    color: var(--accent-color);
+  }
+}

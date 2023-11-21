@@ -2,12 +2,13 @@
   &__list {
     display: flex;
     align-items: center;
+    color: var(--light-color);
   }
 
   &__item {
-    color: var(--light-color);
     font-weight: 300;
     line-height: 1;
+    color: currentColor;
 
     @include mr(47px);
   }

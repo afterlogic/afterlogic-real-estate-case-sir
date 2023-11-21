@@ -19,6 +19,7 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  counter-reset: title;
 }
 
 img {
@@ -27,6 +28,7 @@ img {
   max-width: 100%;
   object-fit: cover;
   font-style: italic;
+  user-select: none;
 }
 
 a {
@@ -118,6 +120,36 @@ a {
 
 .grid {
   display: grid;
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--gap);
+}
+
+.section-radius {
+  border-radius: var(--border-radius-section);
+  padding: 120px 0;
+  transform: translateY(-35px);
+  background-color: var(--light-color);
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 80px;
+  position: relative;
+  color: var(--accent-black-color);
+  font-size: clamp(50px, 6.87vw, 110px);
+  font-weight: 600;
+  line-height: 1;
+  padding-left: clamp(16px, 1.87vw, 30px);
+
+  &::before {
+    content: counter(title) "/";
+    counter-increment: title;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: currentColor;
+    font-size: clamp(16px, 1.87vw, 30px);
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }

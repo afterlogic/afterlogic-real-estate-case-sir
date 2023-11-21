@@ -1,0 +1,22 @@
+.about {
+  &__content {
+    grid-column: 4 span;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--accent-black-color);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}

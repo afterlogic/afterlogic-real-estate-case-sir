@@ -1,0 +1,33 @@
+.cases {
+  padding-top: 0;
+
+  &__item {
+    grid-column: 4 span;
+
+    &:nth-child(2n) {
+      padding-top: 80px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 12px;
+    color: var(--black-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 40px;
+    color: var(--accent-black-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+}
