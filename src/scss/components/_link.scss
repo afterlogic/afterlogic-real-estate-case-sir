@@ -5,6 +5,7 @@
   font-weight: 500;
   line-height: 1;
   padding-right: 32px;
+  overflow: hidden;
 
   &::after {
     content: "";
@@ -22,7 +23,12 @@
 
   @include hover {
     &::after {
-      scale: 1.2;
+      scale: 1.1;
     }
+  }
+
+  &:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
   }
 }

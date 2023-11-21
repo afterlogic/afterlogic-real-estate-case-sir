@@ -27,8 +27,18 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
+    transition: color 0.3s ease;
 
     @include mb(15px);
+
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 4px;
+    }
+
+    @include hover {
+      color: var(--accent-color);
+    }
   }
 
   &__contacts {
@@ -44,6 +54,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.2;
+    transition: color 0.3s ease;
+
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 4px;
+    }
+
+    @include hover {
+      color: var(--accent-color);
+    }
   }
 
   &__nav {

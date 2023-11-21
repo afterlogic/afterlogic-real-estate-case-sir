@@ -1,6 +1,7 @@
 .features {
   padding-top: 60px;
-  transform: translateY(-70px);
+  border-radius: var(--border-radius-section);
+  background-color: var(--light-color);
 
   &__list {
     border-top: 1px solid var(--accent-black-color);

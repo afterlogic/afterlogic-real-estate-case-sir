@@ -1,6 +1,8 @@
 .product {
   background-color: var(--black-color);
-  padding-bottom: 137px;
+  padding: 120px 0 95px;
+  border-radius: var(--border-radius-section);
+  margin-bottom: -35px;
 
   &__info {
     display: flex;

@@ -1,4 +1,8 @@
 .about {
+  padding: 120px 0;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius-section);
+
   &__content {
     grid-column: 4 span;
   }
