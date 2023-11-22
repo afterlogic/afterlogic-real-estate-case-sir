@@ -124,6 +124,12 @@ a {
   gap: var(--gap);
 }
 
+.section-border {
+  padding: 120px 0;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius-section);
+}
+
 .title {
   margin: 0;
   margin-bottom: 80px;

@@ -1,8 +1,4 @@
 .about {
-  padding: 120px 0;
-  background-color: var(--light-color);
-  border-radius: var(--border-radius-section);
-
   &__content {
     grid-column: 4 span;
   }
@@ -11,7 +7,7 @@
     margin: 0;
     margin-bottom: 30px;
     color: var(--accent-black-color);
-    font-size: 21px;
+    font-size: clamp(20px, 1.3vw, 21px);
     font-weight: 600;
     line-height: 1;
     text-transform: capitalize;
