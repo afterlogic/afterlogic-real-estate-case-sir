@@ -3,26 +3,26 @@ import Swiper, {
   Pagination,
   EffectCoverflow,
   A11y,
-  Parallax
+  Lazy,
+  Keyboard
 } from 'swiper';
-Swiper.use([Navigation, Pagination, A11y, EffectCoverflow, Parallax]);
+
+Swiper.use([Navigation, Pagination, A11y, EffectCoverflow, Lazy, Keyboard]);
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 const productSliderElement = document.querySelector('.product__slider');
 const productNavBtns = document.querySelectorAll('.product__nav-btn');
-const productNextBtn = document.querySelector('.product__next');
-
-let productSlider;
-let isAnimating = false;
 
 if (productSliderElement) {
-  productSlider = new Swiper(productSliderElement, {
+  const productSlider = new Swiper(productSliderElement, {
     slidesPerView: 1.5,
+    slideToClickedSlide: true,
     spaceBetween: gap,
-    parallax: true,
+    lazy: true,
     speed: 2000,
     loop: true,
+    autoHeight: true,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -40,26 +40,28 @@ if (productSliderElement) {
     a11y: {
       nextSlideMessage: 'Next slide',
     },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true
+    },
   });
-}
 
-productNavBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const slideId = btn.getAttribute('data-slide-id');
-    const targetSlideIndex = Array.from(productSlider.slides).findIndex((slide) => slide.id === slideId);
+  productNavBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const slideId = btn.getAttribute('data-slide-id');
+      const targetSlideIndex = Array.from(productSlider.slides).findIndex((slide) => slide.id === slideId);
 
-    if (targetSlideIndex !== -1) {
-      productSlider.slideTo(targetSlideIndex);
-    }
-  });
-});
+      if (targetSlideIndex !== -1) {
+        productSlider.slideTo(targetSlideIndex);
+      }
+    });
 
-
-if (productSlider) {
-  productSlider.on('slideChange', () => {
-    const activeRealIndex = productSlider.realIndex;
-    productNavBtns.forEach((btn, index) => {
-      btn.classList.toggle('active', index === activeRealIndex);
+    productSlider.on('slideChange', () => {
+      const activeRealIndex = productSlider.realIndex;
+      productNavBtns.forEach((btn, index) => {
+        btn.classList.toggle('active', index === activeRealIndex);
+      });
     });
   });
 }
