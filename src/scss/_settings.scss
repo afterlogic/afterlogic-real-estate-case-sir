@@ -138,6 +138,7 @@ a {
   font-weight: 600;
   line-height: 1;
   padding-left: clamp(16px, 1.87vw, 30px);
+  text-transform: uppercase;
 
   &::before {
     content: counter(title) "/";

@@ -13,13 +13,21 @@ const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 const productSliderElement = document.querySelector('.product__slider');
 
+
 if (productSliderElement) {
   const productSlider = new Swiper(productSliderElement, {
     slidesPerView: 1.5,
+    slidesPerGroup: 1,
     slideToClickedSlide: true,
+    touchRatio: 0,
     spaceBetween: gap,
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true,
     speed: 2000,
-    loop: true,
+    // centeredSlides: true,
+    // loop: true,
+    initialSlide: 1,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -34,7 +42,12 @@ if (productSliderElement) {
       nextEl: ".swiper-button-next",
     },
     a11y: {
+      enabled: true,
+      prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
+      firstSlideMessage: 'This is the first slide',
+      lastSlideMessage: 'This is the last slide',
+      paginationBulletMessage: 'Go to slide {{index}}',
     },
     keyboard: {
       enabled: true,
@@ -42,13 +55,15 @@ if (productSliderElement) {
       pageUpDown: true
     },
     on: {
-      slideNextTransitionStart: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        setProportionalHeight(activeSlide);
+      init: function () {
+        setHeight(this.slides[this.activeIndex]);
       },
-      slidePrevTransitionStart: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        setProportionalHeight(activeSlide);
+      slideChange: function () {
+        const currentSlide = this.slides[this.activeIndex];
+        const previousSlide = this.slides[this.previousIndex];
+
+        resetHeight(previousSlide)
+        setHeight(currentSlide);
       },
     },
     // on: {
@@ -62,17 +77,43 @@ if (productSliderElement) {
 
     //   },
     // },
+
   });
 }
 
-function setProportionalHeight(slide) {
+
+function setHeight(slide) {
   const img = slide.querySelector('.product__img');
-  img.style.height = '455px';
-  img.style.transition = 'height 0.5s';
+  const aspectRatio = 780 / 455;
+
+  img.style.aspectRatio = aspectRatio;
+  img.style.transition = 'aspect-ratio 1s ease';
 }
 
-function fullHeight(slide) {
+function resetHeight(slide) {
   const img = slide.querySelector('.product__img');
-  img.style.height = '100%';
-  img.style.transition = 'height 0.5s';
+
+  img.style.aspectRatio = 780 / 700;
+  img.style.transition = 'aspect-ratio 1s ease';
 }
+
+// const tabsBtn = document.querySelectorAll('.product__tab-btn')
+// const blockSlider = document.querySelectorAll('.product__slider-block')
+
+// tabsBtn.forEach(tab => {
+//   tab.addEventListener('click', (e) => {
+//     tabsBtn.forEach(btn => {
+//       btn.classList.remove('active');
+//     });
+
+//     e.target.classList.add('active');
+
+//     blockSlider.forEach(slider => {
+//       slider.classList.remove('show');
+//     });
+
+//     const tabIndex = e.target.dataset.tab
+//     const thisSlider = document.getElementById(tabIndex);
+//     thisSlider.classList.add('show')
+//   });
+// });
