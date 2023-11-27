@@ -22,17 +22,15 @@ export const initializeSwiper = (swiperContainer) => {
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
-    speed: 1500,
-    // centeredSlides: true,
-    // loop: true,
-    // initialSlide: 1,
+    speed: 1100,
+    initialSlide: 1,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
       slideShadows: true,
     },
     pagination: {
-      el: '.product__pag',
+      el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
     },
@@ -57,11 +55,13 @@ export const initializeSwiper = (swiperContainer) => {
         setHeight(this.slides[this.activeIndex]);
       },
       slideChange: function () {
-        const currentSlide = this.slides[this.activeIndex];
-        const previousSlide = this.slides[this.previousIndex];
+        setTimeout(() => {
+          const currentSlide = this.slides[this.activeIndex];
+          const previousSlide = this.slides[this.previousIndex];
 
-        resetHeight(previousSlide)
-        setHeight(currentSlide);
+          resetHeight(previousSlide);
+          setHeight(currentSlide);
+        }, 1000);
       },
     },
   });

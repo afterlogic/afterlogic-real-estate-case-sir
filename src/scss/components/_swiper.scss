@@ -2,7 +2,6 @@
   overflow: visible;
 
   &-wrapper {
-    transition-delay: 1s;
     padding-inline: 15px;
   }
 
@@ -35,5 +34,9 @@
 
   &-button-next {
     display: none;
+  }
+
+  &-pagination {
+    // display: none;
   }
 }
