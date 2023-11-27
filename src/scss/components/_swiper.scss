@@ -1,0 +1,39 @@
+.swiper {
+  overflow: visible;
+
+  &-wrapper {
+    transition-delay: 1s;
+    padding-inline: 15px;
+  }
+
+  &-slide {
+    transform: translate3d(0, 0, 0) !important;
+
+    &.swiper-slide-active {
+      .product__content {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.swiper-slide-next {
+      cursor: url(../../img/cursor-next.svg), auto;
+    }
+
+    &.swiper-slide-prev {
+      cursor: url(../../img/cursor-prev.svg), auto;
+    }
+
+    &.swiper-slide-shadow-right {
+      background-image: none;
+    }
+
+    &.swiper-slide-shadow-left {
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%);
+    }
+  }
+
+  &-button-next {
+    display: none;
+  }
+}

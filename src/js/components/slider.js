@@ -11,11 +11,9 @@ Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard]);
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
-const productSliderElement = document.querySelector('.product__slider');
 
-
-if (productSliderElement) {
-  const productSlider = new Swiper(productSliderElement, {
+export const initializeSwiper = (swiperContainer) => {
+  return new Swiper(swiperContainer, {
     slidesPerView: 1.5,
     slidesPerGroup: 1,
     slideToClickedSlide: true,
@@ -24,10 +22,10 @@ if (productSliderElement) {
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
-    speed: 2000,
+    speed: 1500,
     // centeredSlides: true,
     // loop: true,
-    initialSlide: 1,
+    // initialSlide: 1,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -39,7 +37,7 @@ if (productSliderElement) {
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
+      nextEl: '.swiper-button-next',
     },
     a11y: {
       enabled: true,
@@ -66,54 +64,15 @@ if (productSliderElement) {
         setHeight(currentSlide);
       },
     },
-    // on: {
-    //   slideChangeTransitionEnd: function () { // Действия после завершения перехода между слайдами
-
-    //   },
-    //   slideNextTransitionStart: function () { // Действия при начале перехода к следующему слайду
-
-    //   },
-    //   slidePrevTransitionStart: function () { // Действия при начале перехода к предыдущему слайду
-
-    //   },
-    // },
-
   });
 }
 
-
 function setHeight(slide) {
   const img = slide.querySelector('.product__img');
-  const aspectRatio = 780 / 455;
-
-  img.style.aspectRatio = aspectRatio;
-  img.style.transition = 'aspect-ratio 1s ease';
+  img.style.aspectRatio = 780 / 455;
 }
 
-function resetHeight(slide) {
+export function resetHeight(slide) {
   const img = slide.querySelector('.product__img');
-
   img.style.aspectRatio = 780 / 700;
-  img.style.transition = 'aspect-ratio 1s ease';
 }
-
-// const tabsBtn = document.querySelectorAll('.product__tab-btn')
-// const blockSlider = document.querySelectorAll('.product__slider-block')
-
-// tabsBtn.forEach(tab => {
-//   tab.addEventListener('click', (e) => {
-//     tabsBtn.forEach(btn => {
-//       btn.classList.remove('active');
-//     });
-
-//     e.target.classList.add('active');
-
-//     blockSlider.forEach(slider => {
-//       slider.classList.remove('show');
-//     });
-
-//     const tabIndex = e.target.dataset.tab
-//     const thisSlider = document.getElementById(tabIndex);
-//     thisSlider.classList.add('show')
-//   });
-// });
