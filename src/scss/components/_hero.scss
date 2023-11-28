@@ -1,9 +1,16 @@
 .hero {
   position: relative;
-  height: calc(100dvh + 35px);
-  min-height: 952px;
-  transition: height 0.3s ease;
   margin-bottom: -35px;
+  padding-bottom: 155px;
+
+  @include small-tablet {
+    padding-bottom: 215px;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+    padding-bottom: 60px;
+  }
 
   &::after {
     content: "";
@@ -20,66 +27,64 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: calc(100dvh + 35px);
-    min-height: 952px;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
     transition: height 0.3s ease;
   }
 
   &__wrapper {
-    display: flex;
-    align-items: flex-start;
-    column-gap: 29px;
     padding-top: 105px;
     margin-bottom: 120px;
+
+    @include small-tablet {
+      padding-top: 150px;
+      margin-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-top: 100px;
+      margin-bottom: 86px;
+    }
   }
 
-  &__info {
-    position: relative;
-    margin: 0;
-    padding-left: 21px;
-    font-size: clamp(16px, 1.12vw, 18px);
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--light-color);
-    text-transform: capitalize;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 25px;
-      background-color: currentColor;
-      transform: skew(-14deg);
-    }
+  &__main-img {
+    height: auto;
   }
 
   &__content {
     max-width: var(--width360);
     width: 100%;
     margin-left: auto;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__subtitle {
     margin: 0;
     margin-bottom: 10px;
     color: var(--light-color);
-    font-size: clamp(16px, 1.87vw, 30px);
+    font-size: 30px;
     font-weight: 500;
     line-height: 1.2;
   }
 
   &__text {
     margin: 0;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     color: var(--light-color);
     font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &__btn {

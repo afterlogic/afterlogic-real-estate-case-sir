@@ -1,8 +1,43 @@
 .nav {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 100vh;
+    padding: 50px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: var(--light-color);
+    transform: translateX(calc(-150% + 6vw));
+    transition: 1s cubic-bezier(0.7, 0, 0.2, 1);
+    will-change: transform;
+    overflow-y: auto;
+    z-index: 22;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @include mobile {
+    padding: 25px;
+  }
+
+  &.menu--active {
+    border-radius: 0;
+    transform: translateX(0);
+  }
+
   &__list {
     display: flex;
     align-items: center;
     color: var(--light-color);
+
+    @include tablet {
+      flex-direction: column;
+      gap: var(--gap);
+      color: var(--accent-color);
+    }
   }
 
   &__item {
@@ -11,6 +46,10 @@
     color: currentColor;
 
     @include mr(47px);
+
+    @include tablet {
+      @include mr(0);
+    }
   }
 
   &__link {
@@ -49,6 +88,12 @@
 
     &:active {
       color: var(--silver-color);
+    }
+
+    @include tablet {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.2;
     }
   }
 }

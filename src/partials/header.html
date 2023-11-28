@@ -5,14 +5,17 @@
         <img loading="lazy" src="img/logo.svg" class="logo__image" width="48" height="24"
           alt="Logo SIR-Smart Invest Realty" title="Smart Invest Realty">
       </a>
-      <nav class="header__nav nav" aria-label="Main navigation">
+      <nav class="header__nav nav" aria-label="Main navigation" data-menu>
         <ul class="nav__list list-reset">
-          <li class="nav__item"><a href="#" class="nav__link">Directions</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Benefits</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">About us</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#cases" data-scroll data-menu-item class="nav__link">Directions</a></li>
+          <li class="nav__item"><a href="#features" data-scroll data-menu-item class="nav__link">Benefits</a></li>
+          <li class="nav__item"><a href="#about" data-scroll data-menu-item class="nav__link">About us</a></li>
+          <li class="nav__item"><a href="#contact" data-scroll data-menu-item class="nav__link">Contact</a></li>
         </ul>
       </nav>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
     </div>
   </div>
 </header>

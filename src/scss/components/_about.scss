@@ -1,16 +1,32 @@
 .about {
+  @include tablet {
+    padding-bottom: 60px;
+  }
+
   &__content {
     grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 12 span;
+    }
   }
 
   &__subtitle {
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 23px;
     color: var(--accent-black-color);
-    font-size: clamp(20px, 1.3vw, 21px);
+    font-size: 21px;
     font-weight: 600;
     line-height: 1;
     text-transform: capitalize;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {

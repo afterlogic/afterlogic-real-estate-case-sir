@@ -121,12 +121,28 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--gap);
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include small-tablet {
+    gap: 30px;
+  }
+
+  @include mobile {
+    column-gap: 0;
+  }
 }
 
 .section-border {
   padding: 120px 0;
   background-color: var(--light-color);
   border-radius: var(--border-radius-section);
+
+  @include mobile {
+    padding: 60px 0;
+  }
 }
 
 .title {
@@ -134,10 +150,10 @@ a {
   margin-bottom: 80px;
   position: relative;
   color: var(--accent-black-color);
-  font-size: clamp(50px, 6.87vw, 110px);
+  font-size: 110px;
   font-weight: 600;
   line-height: 1;
-  padding-left: clamp(16px, 1.87vw, 30px);
+  padding-left: 30px;
   text-transform: uppercase;
 
   &::before {
@@ -147,8 +163,62 @@ a {
     top: 0;
     left: 0;
     color: currentColor;
-    font-size: clamp(16px, 1.87vw, 30px);
+    font-size: 30px;
     font-weight: 500;
     line-height: 1.2;
+  }
+
+  @include small-tablet {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  @include mobile {
+    font-size: 50px;
+    padding-left: 15px;
+
+    &::before {
+      font-size: 15px;
+    }
+  }
+}
+
+.burger {
+  @include burger;
+
+  --burger-width: 32px;
+  --burger-height: 25px;
+  --burger-line-height: 4px;
+  display: none;
+  color: var(--light-color);
+  z-index: 2000;
+
+  &:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+  }
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
   }
 }

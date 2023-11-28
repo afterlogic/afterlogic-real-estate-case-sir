@@ -1,7 +1,7 @@
 .link {
   position: relative;
   color: var(--accent-color);
-  font-size: clamp(16px, 1.25vw, 20px);
+  font-size: 20px;
   font-weight: 500;
   line-height: 1;
   padding-right: 32px;
@@ -18,17 +18,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    transition: scale 0.3s ease;
-  }
-
-  @include hover {
-    &::after {
-      scale: 1.1;
-    }
   }
 
   &:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 4px;
+  }
+
+  @include mobile {
+    font-size: 16px;
   }
 }

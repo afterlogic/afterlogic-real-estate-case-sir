@@ -50,4 +50,8 @@
   &:active {
     color: var(--silver-color);
   }
+
+  @include mobile {
+    max-width: 100%;
+  }
 }

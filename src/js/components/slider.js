@@ -27,7 +27,7 @@ export const initializeSwiper = (swiperContainer) => {
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
-      slideShadows: true,
+      slideShadows: false,
     },
     pagination: {
       el: '.swiper-pagination',

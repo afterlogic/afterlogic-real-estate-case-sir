@@ -48,13 +48,15 @@
     &::before {
       top: 50%;
       transform: rotate(45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      color: var(--accent-color);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 
     &::after {
       top: 50%;
+      color: var(--accent-color);
       transform: rotate(-45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 
     .burger__line {
