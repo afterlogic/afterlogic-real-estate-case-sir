@@ -16,12 +16,11 @@ export const initializeSwiper = (swiperContainer) => {
   return new Swiper(swiperContainer, {
     slidesPerGroup: 1,
     slideToClickedSlide: true,
-    touchRatio: 0,
     spaceBetween: gap,
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
-    speed: 1100,
+    speed: 1000,
     initialSlide: 1,
     // loop: true,
     effect: "coverflow",
@@ -52,16 +51,18 @@ export const initializeSwiper = (swiperContainer) => {
       pageUpDown: true
     },
     breakpoints: {
-      576: {
-        slidesPerView: 1.2,
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 30,
       },
       639: {
-        slidesPerView: 1.25,
-        spaceBetween: 40,
+        slidesPerView: 1.1,
+        spaceBetween: 50,
+        touchRatio: 1,
       },
       1024: {
         slidesPerView: 1.5,
-        touchRatio: 1,
+        touchRatio: 0,
       }
     },
     on: {

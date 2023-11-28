@@ -2,7 +2,6 @@
   background-color: var(--black-color);
   padding: 120px 0 95px;
   border-radius: var(--border-radius-section);
-  // margin-bottom: -188px;
   overflow: hidden;
 
   @include mobile {
@@ -15,10 +14,10 @@
 
   &__info {
     display: flex;
-    gap: 100px;
+    gap: 190px;
     margin-bottom: 70px;
 
-    @include tablet {
+    @include big-tablet {
       align-items: center;
       gap: 40px;
       margin-bottom: 120px;
@@ -37,22 +36,15 @@
   }
 
   &__title {
-    max-width: 741px;
+    max-width: 650px;
     width: 100%;
     color: var(--light-color);
     margin-bottom: 0;
     padding-left: 40px;
 
-    @include tablet {
-      max-width: 650px;
-    }
-
     @include mini-tablet {
       max-width: 100%;
-    }
-
-    @include mobile {
-      padding-left: 20px;
+      padding-left: 30px;
     }
   }
 
@@ -62,16 +54,16 @@
 
     @include tablet {
       padding-top: 0;
-      padding-left: 20px;
     }
   }
 
   &__content {
     color: var(--light-color);
     padding-top: 25px;
+    position: absolute;
+    transform: translateY(100%);
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease, visibility 1s ease;
+    transition: opacity 1s ease 1s, transform 1s ease 1s;
 
     @include tablet {
       gap: 36px;

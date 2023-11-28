@@ -1,6 +1,10 @@
 .swiper {
   overflow: visible;
 
+  @include small-tablet {
+    overflow: hidden;
+  }
+
   &-wrapper {
     padding-inline: 15px;
   }
@@ -11,7 +15,7 @@
     &.swiper-slide-active {
       .product__content {
         opacity: 1;
-        visibility: visible;
+        transform: translateY(0);
       }
     }
 
@@ -36,18 +40,34 @@
     display: none;
   }
 
-  &-pagination {
-    // display: none;
-  }
-
   &-pagination-bullet {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: var(--pag-color);
+    opacity: 1;
+
+    @include tablet {
+      width: 10px;
+      height: 10px;
+    }
 
     &-active {
       background-color: var(--light-color);
     }
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    @include mr(10px);
+
+    margin: 0;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: -60px;
   }
 }

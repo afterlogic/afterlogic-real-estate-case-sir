@@ -38,6 +38,10 @@
       gap: var(--gap);
       color: var(--accent-color);
     }
+
+    @include mobile {
+      gap: 30px;
+    }
   }
 
   &__item {
