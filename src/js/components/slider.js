@@ -14,7 +14,6 @@ const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
 export const initializeSwiper = (swiperContainer) => {
   return new Swiper(swiperContainer, {
-    slidesPerView: 1.5,
     slidesPerGroup: 1,
     slideToClickedSlide: true,
     touchRatio: 0,
@@ -24,6 +23,7 @@ export const initializeSwiper = (swiperContainer) => {
     observeSlideChildren: true,
     speed: 1100,
     initialSlide: 1,
+    // loop: true,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -33,6 +33,7 @@ export const initializeSwiper = (swiperContainer) => {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
+      dynamicBullets: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -49,6 +50,19 @@ export const initializeSwiper = (swiperContainer) => {
       enabled: true,
       onlyInViewport: true,
       pageUpDown: true
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.2,
+      },
+      639: {
+        slidesPerView: 1.25,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 1.5,
+        touchRatio: 1,
+      }
     },
     on: {
       init: function () {

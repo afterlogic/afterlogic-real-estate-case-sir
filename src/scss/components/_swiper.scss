@@ -16,11 +16,11 @@
     }
 
     &.swiper-slide-next {
-      cursor: url(../../img/cursor-next.svg), auto;
+      cursor: url(../img/cursor-next.svg), auto;
     }
 
     &.swiper-slide-prev {
-      cursor: url(../../img/cursor-prev.svg), auto;
+      cursor: url(../img/cursor-prev.svg), auto;
     }
 
     &.swiper-slide-shadow-right {
@@ -37,6 +37,17 @@
   }
 
   &-pagination {
-    display: none;
+    // display: none;
+  }
+
+  &-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--pag-color);
+
+    &-active {
+      background-color: var(--light-color);
+    }
   }
 }

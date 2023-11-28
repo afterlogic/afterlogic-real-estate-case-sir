@@ -2,8 +2,16 @@
   background-color: var(--black-color);
   padding: 120px 0 95px;
   border-radius: var(--border-radius-section);
-  margin-bottom: -188px;
+  // margin-bottom: -188px;
   overflow: hidden;
+
+  @include mobile {
+    border-radius: var(--border-radius-section-mobile);
+  }
+
+  @include small-tablet {
+    padding-top: 60px;
+  }
 
   &__info {
     display: flex;
@@ -16,9 +24,16 @@
       margin-bottom: 120px;
     }
 
-    // @include mobile {
-    //   flex-direction: column;
-    // }
+    @include mini-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--gap);
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      gap: 36px;
+    }
   }
 
   &__title {
@@ -32,16 +47,22 @@
       max-width: 650px;
     }
 
-    // @include mobile {
-    //   max-width: 100%;
-    // }
+    @include mini-tablet {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      padding-left: 20px;
+    }
   }
 
   &__tab {
     padding-top: 28px;
+    flex-grow: 1;
 
     @include tablet {
-      padding: 0;
+      padding-top: 0;
+      padding-left: 20px;
     }
   }
 
@@ -51,6 +72,14 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease, visibility 1s ease;
+
+    @include tablet {
+      gap: 36px;
+    }
+
+    @include small-tablet {
+      gap: 30px;
+    }
   }
 
   &__descr {
@@ -101,6 +130,10 @@
       left: 0;
       color: currentColor;
     }
+
+    @include mini-tablet {
+      font-size: 36px;
+    }
   }
 
   &__adress {
@@ -116,6 +149,11 @@
     aspect-ratio: 780 / 700;
     will-change: transition;
     transition: aspect-ratio 1s ease;
+
+    // @include small-tablet {
+    //   width: auto;
+    //   height: auto;
+    // }
   }
 
   &__slider-block {
