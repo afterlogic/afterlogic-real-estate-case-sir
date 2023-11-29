@@ -119,6 +119,11 @@
     color: currentColor;
     transition: color 0.3s ease;
 
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 4px;
+    }
+
     &:hover {
       color: var(--accent-color);
     }

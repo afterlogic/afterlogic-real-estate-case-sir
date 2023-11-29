@@ -31,6 +31,10 @@
   &--fill {
     background-color: var(--accent-color);
     color: var(--light-color);
+
+    &::before {
+      background-color: var(--black-color);
+    }
   }
 
   &:focus {
