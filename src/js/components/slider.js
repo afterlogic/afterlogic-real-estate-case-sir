@@ -55,6 +55,10 @@ export const initializeSwiper = (swiperContainer) => {
         slidesPerView: 1,
         spaceBetween: 30,
       },
+      576: {
+        slidesPerView: 1.1,
+        spaceBetween: 30,
+      },
       639: {
         slidesPerView: 1.1,
         spaceBetween: 50,

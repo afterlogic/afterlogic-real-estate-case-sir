@@ -48,6 +48,7 @@
     font-weight: 300;
     line-height: 1;
     color: currentColor;
+    text-transform: capitalize;
 
     @include mr(47px);
 

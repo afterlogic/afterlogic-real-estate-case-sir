@@ -1,14 +1,43 @@
 .cases {
+  &__wrapper {
+    @include tablet {
+      gap: 40px;
+    }
+
+    @include mobile {
+      column-gap: 0;
+      row-gap: var(--gap);
+    }
+  }
+
   &__item {
     grid-column: 4 span;
 
     &:nth-child(2n) {
       padding-top: 80px;
     }
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 12 span;
+
+      &:nth-child(2n) {
+        padding-top: 0;
+      }
+    }
   }
 
   &__img {
+    width: 100%;
+    height: auto;
     margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
   }
 
   &__subtitle {
@@ -18,6 +47,10 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
+
+    @include mobile {
+      font-weight: 600;
+    }
   }
 
   &__text {
@@ -27,5 +60,9 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 1.3;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
   }
 }

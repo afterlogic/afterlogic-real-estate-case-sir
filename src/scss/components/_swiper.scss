@@ -1,9 +1,9 @@
 .swiper {
   overflow: visible;
 
-  @include small-tablet {
-    overflow: hidden;
-  }
+  // @include small-tablet {
+  //   overflow: hidden;
+  // }
 
   &-wrapper {
     padding-inline: 15px;

@@ -54,13 +54,14 @@
 
     @include tablet {
       padding-top: 0;
+      padding-left: 15px;
     }
   }
 
   &__content {
     color: var(--light-color);
     padding-top: 25px;
-    position: absolute;
+    // position: absolute;
     transform: translateY(100%);
     opacity: 0;
     transition: opacity 1s ease 1s, transform 1s ease 1s;
@@ -71,11 +72,16 @@
 
     @include small-tablet {
       gap: 30px;
+      gap: 0;
     }
   }
 
   &__descr {
     grid-column: 6 span;
+
+    @include mobile {
+      grid-column: 12 span;
+    }
   }
 
   &__name {
@@ -86,6 +92,10 @@
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
+
+    @include small-tablet {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
@@ -103,6 +113,11 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
+
+    @include small-tablet {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
   }
 
   &__price {
