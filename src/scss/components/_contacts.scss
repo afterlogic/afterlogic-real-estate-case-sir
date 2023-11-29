@@ -1,9 +1,39 @@
 .contacts {
-  margin-bottom: 75px;
-
   &__wrapper {
-    display: flex;
-    gap: var(--gap);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 60px;
+    row-gap: 80px;
+
+    @include tablet {
+      gap: 40px;
+    }
+  }
+
+  &__pic {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__info {
+    grid-column: 2 span;
+
+    @include tablet {
+      grid-column: 3 span;
+    }
+
+    @include mobile {
+      grid-column: 6 span;
+    }
   }
 
   &__text {
@@ -15,10 +45,14 @@
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__highlight {
-    display: block;
+    display: inline-block;
     color: var(--accent-color);
   }
 }

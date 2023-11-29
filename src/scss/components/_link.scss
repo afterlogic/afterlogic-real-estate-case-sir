@@ -27,5 +27,10 @@
 
   @include mini-tablet {
     font-size: 16px;
+    padding-right: 24px;
+
+    &::after {
+      width: 14px;
+    }
   }
 }
