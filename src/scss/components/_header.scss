@@ -1,5 +1,5 @@
 .header {
-  &__container {
+  &__content {
     position: relative;
   }
 
@@ -8,11 +8,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 20px;
-    padding-inline: 10px;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 20px;
   }
 }
