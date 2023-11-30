@@ -1,15 +1,17 @@
 .product {
   background-color: var(--black-color);
-  padding: 120px 0 95px;
+  padding: 120px 0 130px;
   border-radius: var(--border-radius-section);
   overflow: hidden;
+  margin-bottom: -35px;
+
+  @include small-tablet {
+    padding: 60px 0 95px;
+    margin-bottom: 0;
+  }
 
   @include mobile {
     border-radius: var(--border-radius-section-mobile);
-  }
-
-  @include small-tablet {
-    padding-top: 60px;
   }
 
   &__info {
@@ -61,17 +63,18 @@
   &__content {
     color: var(--light-color);
     padding-top: 25px;
-    // position: absolute;
     transform: translateY(100%);
     opacity: 0;
-    transition: opacity 1s ease 1s, transform 1s ease 1s;
+    visibility: hidden;
+    transition: opacity 1s ease 1s, transform 1s ease 1s, visibility 1s ease 1s;
 
     @include tablet {
-      gap: 36px;
+      column-gap: 36px;
     }
 
     @include small-tablet {
-      gap: 30px;
+      column-gap: 0px;
+      row-gap: 20px;
     }
   }
 
@@ -155,11 +158,6 @@
     aspect-ratio: 780 / 700;
     will-change: transition;
     transition: aspect-ratio 1s ease;
-
-    // @include small-tablet {
-    //   width: auto;
-    //   height: auto;
-    // }
   }
 
   &__slider-block {

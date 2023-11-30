@@ -5,29 +5,30 @@ import Swiper, {
   A11y,
   Lazy,
   Keyboard,
+  EffectCreative
 } from 'swiper';
 
-Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard]);
+Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard, EffectCreative]);
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
 export const initializeSwiper = (swiperContainer) => {
-  return new Swiper(swiperContainer, {
+  const productSlider = new Swiper(swiperContainer, {
+    init: true,
     slidesPerGroup: 1,
     slideToClickedSlide: true,
     spaceBetween: gap,
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
     speed: 1000,
-    initialSlide: 1,
-    // loop: true,
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0,
-      slideShadows: false,
-    },
+    // initialSlide: 1,
+    loop: true,
+    loopAdditionalSlides: 10,
+    // centeredSlides: true,
+    // effect: "coverflow",
+    // coverflowEffect: {
+    //   rotate: 0,
+    //   slideShadows: false,
+    // },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -53,11 +54,6 @@ export const initializeSwiper = (swiperContainer) => {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 30,
-      },
-      576: {
-        slidesPerView: 1.1,
-        spaceBetween: 30,
       },
       639: {
         slidesPerView: 1.1,
@@ -72,6 +68,14 @@ export const initializeSwiper = (swiperContainer) => {
     on: {
       init: function () {
         setHeight(this.slides[this.activeIndex]);
+
+        this.slides.forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+
+            console.log('Clicked on slide', index);
+          });
+        });
+
       },
       slideChange: function () {
         setTimeout(() => {
@@ -85,6 +89,7 @@ export const initializeSwiper = (swiperContainer) => {
     },
   });
 }
+
 
 function setHeight(slide) {
   const img = slide.querySelector('.product__img');
