@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -40,6 +41,10 @@ a {
 
 .is-hidden {
   display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.page--ios .dis-scroll {
+  position: relative;
 }
 
 .btn-reset {
@@ -187,9 +192,9 @@ a {
 .burger {
   @include burger;
 
-  --burger-width: 32px;
-  --burger-height: 25px;
-  --burger-line-height: 4px;
+  --burger-width: 48px;
+  --burger-height: 40px;
+  --burger-line-height: 5px;
   display: none;
   color: var(--light-color);
   z-index: 2000;
