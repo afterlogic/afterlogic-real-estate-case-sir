@@ -9,9 +9,8 @@
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     background-color: var(--light-color);
-    transform: translateX(calc(-150% + 6vw));
-    transition: 1s cubic-bezier(0.7, 0, 0.2, 1);
-    will-change: transform;
+    translate: -150% 0;
+    transition: border-radius 1s cubic-bezier(0.7, 0, 0.2, 1), translate 1s cubic-bezier(0.7, 0, 0.2, 1);
     overflow-y: auto;
     z-index: 1000;
     display: flex;
@@ -25,7 +24,7 @@
 
   &.menu--active {
     border-radius: 0;
-    transform: translateX(0);
+    translate: 0;
   }
 
   &__list {
