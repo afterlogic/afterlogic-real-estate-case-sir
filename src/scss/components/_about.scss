@@ -3,6 +3,12 @@
     padding-bottom: 60px;
   }
 
+  &__wrapper {
+    @include tablet {
+      row-gap: 30px;
+    }
+  }
+
   &__content {
     grid-column: 4 span;
 

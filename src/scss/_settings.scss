@@ -120,14 +120,14 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--gap);
+  column-gap: var(--gap);
 
   @include tablet {
-    gap: 40px;
+    column-gap: 40px;
   }
 
   @include small-tablet {
-    gap: 30px;
+    column-gap: 30px;
   }
 
   @include mobile {

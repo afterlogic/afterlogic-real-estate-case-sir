@@ -1,7 +1,7 @@
 .cases {
   &__wrapper {
     @include tablet {
-      gap: 40px;
+      column-gap: 40px;
     }
 
     @include mobile {
