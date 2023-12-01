@@ -1,4 +1,12 @@
 .cases {
+  padding: 120px 0 150px;
+  margin-bottom: -15px;
+
+  @include tablet {
+    padding: 120px 0;
+    margin-bottom: 0;
+  }
+
   &__wrapper {
     @include tablet {
       column-gap: 40px;

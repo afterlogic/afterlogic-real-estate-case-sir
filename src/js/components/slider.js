@@ -5,10 +5,9 @@ import Swiper, {
   A11y,
   Lazy,
   Keyboard,
-  EffectCreative
 } from 'swiper';
 
-Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard, EffectCreative]);
+Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard]);
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));

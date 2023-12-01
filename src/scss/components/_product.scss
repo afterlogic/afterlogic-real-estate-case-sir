@@ -51,7 +51,7 @@
   }
 
   &__tab {
-    padding-top: 28px;
+    padding-top: 25px;
     flex-grow: 1;
 
     @include tablet {
@@ -63,6 +63,7 @@
   &__content {
     color: var(--light-color);
     padding-top: 25px;
+    position: absolute;
     transform: translateY(100%);
     opacity: 0;
     visibility: hidden;

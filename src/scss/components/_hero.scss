@@ -39,6 +39,14 @@
   &__wrapper {
     padding-top: 105px;
     margin-bottom: 120px;
+    display: flex;
+    column-gap: 30px;
+
+    @include mini-tablet {
+      column-gap: 0;
+      row-gap: 21px;
+      flex-direction: column;
+    }
 
     @include small-tablet {
       padding-top: 150px;
@@ -53,6 +61,33 @@
 
   &__main-img {
     height: auto;
+  }
+
+  &__descr {
+    position: relative;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 140%;
+    color: var(--light-color);
+    text-transform: capitalize;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 25px;
+      background-color: currentColor;
+      transform: skew(-14deg);
+    }
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 1.2;
+    }
   }
 
   &__content {

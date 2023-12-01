@@ -11,7 +11,7 @@
 
   &__wrapper {
     display: flex;
-    gap: 40px;
+    gap: var(--gap);
     margin-bottom: 120px;
 
     @include tablet {
