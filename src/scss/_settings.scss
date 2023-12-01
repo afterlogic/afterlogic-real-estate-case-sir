@@ -192,9 +192,9 @@ a {
 .burger {
   @include burger;
 
-  --burger-width: 48px;
-  --burger-height: 30px;
-  --burger-line-height: 5px;
+  --burger-width: 40px;
+  --burger-height: 24px;
+  --burger-line-height: 4px;
   display: none;
   color: var(--light-color);
   z-index: 2000;

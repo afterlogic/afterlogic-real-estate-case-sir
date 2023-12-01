@@ -85,6 +85,17 @@ export const initializeSwiper = (swiperContainer) => {
           setHeight(currentSlide);
         }, 1000);
       },
+      // slideChangeTransitionEnd: function () {
+      //   const totalSlides = this.slides.length;
+
+      //   if (this.isEnd) {
+      //     // Если мы на последнем слайде, перейдем ко второму
+      //     this.slideTo(1, 1000, false);
+      //   } else if (this.activeIndex === 0) {
+      //     // Если мы на втором слайде, перейдем к последнему
+      //     this.slideTo(totalSlides - 2, 1000, false);
+      //   }
+      // },
     },
   });
 }

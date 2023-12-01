@@ -1,4 +1,10 @@
 .contacts {
+  padding-top: 120px;
+
+  @include mobile {
+    padding-top: 60px;
+  }
+
   &__wrapper {
     position: relative;
     display: grid;
@@ -6,7 +12,7 @@
     column-gap: 60px;
     row-gap: 80px;
 
-    @include tablet {
+    @include small-tablet {
       gap: 40px;
     }
   }

@@ -42,6 +42,10 @@
     display: flex;
     column-gap: 30px;
 
+    @include tablet {
+      padding-top: 150px;
+    }
+
     @include mini-tablet {
       column-gap: 0;
       row-gap: 21px;

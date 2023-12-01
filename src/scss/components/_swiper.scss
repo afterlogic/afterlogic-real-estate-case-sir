@@ -1,6 +1,6 @@
 .swiper {
-  width: 100%;
-  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: visible;
 
   &-wrapper {
@@ -68,6 +68,7 @@
   }
 
   &-pagination-bullet {
+    display: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
