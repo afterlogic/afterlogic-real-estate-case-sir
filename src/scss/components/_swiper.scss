@@ -1,10 +1,9 @@
 .swiper {
-  margin-left: auto;
-  margin-right: auto;
-  overflow: visible;
+  // overflow: visible;
 
   &-wrapper {
     // transition-delay: 1s;
+    margin-left: -280px;
   }
 
   &-slide {
@@ -68,17 +67,11 @@
   }
 
   &-pagination-bullet {
-    display: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: var(--pag-color);
     opacity: 1;
-
-    @include tablet {
-      width: 10px;
-      height: 10px;
-    }
 
     &-active {
       background-color: var(--light-color);
@@ -96,6 +89,11 @@
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
-    bottom: -60px;
+    // position: static;
+    // margin: 0 auto;
+    // transform: translateX(0);
+    // width: auto;
+    // padding-top: 20px;
+    bottom: 0px;
   }
 }

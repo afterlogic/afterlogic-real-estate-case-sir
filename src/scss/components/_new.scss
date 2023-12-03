@@ -61,8 +61,8 @@
   }
 
   &__content {
+    background-color: var(--black-color);
     display: flex;
-    position: absolute;
     column-gap: var(--gap);
     color: var(--light-color);
     padding-top: 25px;
@@ -76,14 +76,19 @@
     }
 
     @include small-tablet {
+      flex-direction: column;
       column-gap: 0px;
       row-gap: 20px;
     }
   }
 
   &__img {
+    // width: 100%;
+    // height: auto;
+    // width: auto;
     width: 100%;
     height: auto;
+    // height: 100%;
     aspect-ratio: 780 / 700;
     transition: aspect-ratio 1s ease;
   }

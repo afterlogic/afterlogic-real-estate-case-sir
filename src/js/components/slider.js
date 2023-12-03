@@ -14,20 +14,18 @@ const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
 export const initializeSwiper = (swiperContainer) => {
   const productSlider = new Swiper(swiperContainer, {
-    init: true,
     slidesPerGroup: 1,
     slideToClickedSlide: true,
     spaceBetween: gap,
     speed: 1000,
-    // initialSlide: 1,
     loop: true,
-    loopAdditionalSlides: 10,
-    // centeredSlides: true,
-    // effect: "coverflow",
-    // coverflowEffect: {
-    //   rotate: 0,
-    //   slideShadows: false,
-    // },
+    loopAdditionalSlides: 100,
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      slideShadows: true,
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -55,12 +53,12 @@ export const initializeSwiper = (swiperContainer) => {
         slidesPerView: 1,
       },
       639: {
-        slidesPerView: 1.1,
+        slidesPerView: 1.5,
         spaceBetween: 50,
         touchRatio: 1,
       },
-      1024: {
-        slidesPerView: 1.5,
+      1440: {
+        slidesPerView: 2.3,
         touchRatio: 0,
       }
     },
@@ -80,6 +78,8 @@ export const initializeSwiper = (swiperContainer) => {
         setTimeout(() => {
           const currentSlide = this.slides[this.activeIndex];
           const previousSlide = this.slides[this.previousIndex];
+
+
 
           resetHeight(previousSlide);
           setHeight(currentSlide);

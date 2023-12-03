@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 70vw;
-    height: 100dvh;
+    height: 100vh;
     padding: 50px;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -12,7 +12,7 @@
     translate: -150% 0;
     transition: border-radius 1s cubic-bezier(0.7, 0, 0.2, 1), translate 1s cubic-bezier(0.7, 0, 0.2, 1);
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;

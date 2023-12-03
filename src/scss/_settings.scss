@@ -112,16 +112,6 @@ a {
   outline: none;
 }
 
-.dis-scroll {
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100dvh;
-  overscroll-behavior: none;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
