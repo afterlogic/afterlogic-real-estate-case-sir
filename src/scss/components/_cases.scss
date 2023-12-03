@@ -1,8 +1,10 @@
 .cases {
-  padding-top: 120px;
+  padding-top: 180px;
+  transform: translateY(-60px);
 
   @include mobile {
     padding-top: 60px;
+    transform: translateY(0);
   }
 
   &__wrapper {
