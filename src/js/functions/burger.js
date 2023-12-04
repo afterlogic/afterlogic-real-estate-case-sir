@@ -4,7 +4,7 @@
   const menuItems = document.querySelectorAll('[data-menu-item]');
   const overlay = document.querySelector('[data-menu-overlay]');
 
-  burger.addEventListener('touchstart', (e) => {
+  burger.addEventListener('click', (e) => {
     burger.classList.toggle('burger--active');
     menu.classList.toggle('menu--active');
     overlay.classList.toggle('overlay--active');
@@ -20,12 +20,12 @@
     }
   });
 
-  overlay.addEventListener('touchstart', () => {
+  overlay.addEventListener('click', () => {
     closeMenu();
   });
 
   menuItems.forEach(el => {
-    el.addEventListener('touchstart', () => {
+    el.addEventListener('click', () => {
       closeMenu();
     });
   });
@@ -40,9 +40,7 @@
   };
 
   const scrollController = {
-    scrollPosition: 0,
     disableScroll() {
-      scrollController.scrollPosition = window.scrollY;
       const paddingOffset = document.documentElement.clientWidth - document.body.offsetWidth;
       document.body.style.cssText = `
         overflow: hidden;
@@ -52,10 +50,8 @@
     },
     enableScroll() {
       document.body.style.cssText = '';
-      window.scroll({
-        top: scrollController.scrollPosition
-      });
       document.body.style.scrollBehavior = '';
     }
   };
+
 })();

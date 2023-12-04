@@ -1,30 +1,31 @@
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Pagination,
   Navigation,
   EffectCoverflow,
   A11y,
   Keyboard,
-} from 'swiper';
-
-Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Keyboard]);
+} from 'swiper/modules';
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
 export const initializeSwiper = (swiperContainer) => {
   const productSlider = new Swiper(swiperContainer, {
-    slidesPerGroup: 1,
+    modules: [Pagination, Navigation, A11y, EffectCoverflow, Keyboard],
+    // slidesPerGroup: 1,
     slideToClickedSlide: true,
     spaceBetween: gap,
     speed: 1000,
     loop: true,
-    loopedSlides: 10,
-    // centeredSlides: true,
-    // effect: "coverflow",
-    // coverflowEffect: {
-    //   rotate: 0,
-    //   slideShadows: true,
-    // },
+    loopPreventsSliding: true,
+
+    centeredSlides: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      slideShadows: true,
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -64,7 +65,7 @@ export const initializeSwiper = (swiperContainer) => {
       },
       1440: {
         // slidesPerView: 2.3,
-        slidesPerView: 2.3,
+        slidesPerView: 1.2,
         touchRatio: 0,
       }
     },
