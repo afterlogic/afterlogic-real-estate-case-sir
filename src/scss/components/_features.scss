@@ -1,7 +1,16 @@
 .features {
-  padding-top: 60px;
+  padding-top: 120px;
+  padding-bottom: 60px;
   border-radius: var(--border-radius-section);
   background-color: var(--light-color);
+
+  @include small-tablet {
+    padding-bottom: 0;
+  }
+
+  @include mobile {
+    padding-top: 60px;
+  }
 
   &__title {
     @include small-tablet {

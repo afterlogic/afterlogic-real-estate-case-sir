@@ -1,5 +1,9 @@
 .contacts {
-  padding-top: 120px;
+  padding-top: 140px;
+
+  @include tablet {
+    padding-top: 120px;
+  }
 
   @include mobile {
     padding-top: 60px;

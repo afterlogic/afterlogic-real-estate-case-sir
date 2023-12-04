@@ -3,12 +3,12 @@
   margin-bottom: -35px;
   padding-bottom: 155px;
 
-  @include tablet {
-    margin-bottom: 0;
-    padding-bottom: 80px;
+  @include small-tablet {
+    padding-bottom: 125px;
   }
 
   @include mobile {
+    margin-bottom: 0;
     padding-bottom: 60px;
   }
 
@@ -42,7 +42,7 @@
     display: flex;
     column-gap: 30px;
 
-    @include tablet {
+    @include small-tablet {
       padding-top: 150px;
       margin-bottom: 80px;
       column-gap: 0;
@@ -53,7 +53,7 @@
     @include mobile {
       padding-top: 110px;
       margin-bottom: 38px;
-      row-gap: 28px;
+      row-gap: 24px;
     }
   }
 
@@ -62,7 +62,7 @@
     max-width: 787px;
     width: 100%;
 
-    @include tablet {
+    @include small-tablet {
       max-width: 575px;
     }
 
@@ -75,7 +75,7 @@
     max-width: 179px;
     width: 100%;
 
-    @include tablet {
+    @include small-tablet {
       max-width: 300px;
       height: auto;
     }

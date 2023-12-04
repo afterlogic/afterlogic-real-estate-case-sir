@@ -1,10 +1,3 @@
-// import {
-//   disableScroll
-// } from '../functions/disable-scroll';
-// import {
-//   enableScroll
-// } from '../functions/enable-scroll';
-
 (function () {
   const burger = document.querySelector('[data-burger]');
   const menu = document.querySelector('[data-menu]');
@@ -70,5 +63,4 @@
       document.body.style.scrollBehavior = '';
     }
   };
-
 })();

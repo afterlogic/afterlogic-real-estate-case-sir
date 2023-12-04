@@ -3,11 +3,10 @@ import Swiper, {
   Navigation,
   EffectCoverflow,
   A11y,
-  Lazy,
   Keyboard,
 } from 'swiper';
 
-Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Lazy, Keyboard]);
+Swiper.use([Pagination, Navigation, A11y, EffectCoverflow, Keyboard]);
 
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
@@ -18,9 +17,9 @@ export const initializeSwiper = (swiperContainer) => {
     slideToClickedSlide: true,
     spaceBetween: gap,
     speed: 1000,
-    loop: true,
-    loopAdditionalSlides: 100,
-    centeredSlides: true,
+    // loop: true,
+    // loopedSlides: 10,
+    // centeredSlides: true,
     effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
@@ -51,13 +50,20 @@ export const initializeSwiper = (swiperContainer) => {
     breakpoints: {
       320: {
         slidesPerView: 1,
+        spaceBetween: 20,
       },
       639: {
+        slidesPerView: 1.1,
+        centeredSlides: false,
+      },
+      1024: {
         slidesPerView: 1.5,
         spaceBetween: 50,
         touchRatio: 1,
+        centeredSlides: false,
       },
       1440: {
+        // slidesPerView: 2.3,
         slidesPerView: 2.3,
         touchRatio: 0,
       }

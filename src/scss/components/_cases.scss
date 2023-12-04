@@ -1,15 +1,21 @@
 .cases {
-  padding-top: 180px;
-  transform: translateY(-60px);
+  padding-top: 60px;
 
-  @include mobile {
-    padding-top: 60px;
-    transform: translateY(0);
+  &__title {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &__wrapper {
     @include tablet {
-      column-gap: 40px;
+      gap: 40px;
     }
 
     @include mobile {

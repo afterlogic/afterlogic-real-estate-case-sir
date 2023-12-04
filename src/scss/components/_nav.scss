@@ -1,5 +1,5 @@
 .nav {
-  @include tablet {
+  @include small-tablet {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@
     align-items: center;
     color: var(--light-color);
 
-    @include tablet {
+    @include small-tablet {
       flex-direction: column;
       gap: var(--gap);
       color: var(--accent-color);
@@ -51,7 +51,7 @@
 
     @include mr(47px);
 
-    @include tablet {
+    @include small-tablet {
       @include mr(0);
     }
   }
@@ -94,7 +94,7 @@
       color: var(--silver-color);
     }
 
-    @include tablet {
+    @include small-tablet {
       font-size: 30px;
       font-weight: 500;
       line-height: 1.2;

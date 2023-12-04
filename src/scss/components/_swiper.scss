@@ -3,7 +3,13 @@
 
   &-wrapper {
     // transition-delay: 1s;
-    margin-left: -280px;
+    // margin-left: -280px;
+
+    @include big-desktop {
+      margin-left: 0;
+      padding-inline: var(--container-offset);
+      max-width: var(--container-width);
+    }
   }
 
   &-slide {
