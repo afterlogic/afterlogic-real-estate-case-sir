@@ -1,5 +1,5 @@
 .nav {
-  @include small-tablet {
+  @include tablet {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,12 +14,7 @@
     overflow-y: auto;
     z-index: 1;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-  }
-
-  @include mobile {
-    padding: 10px;
   }
 
   &.menu--active {
@@ -32,14 +27,10 @@
     align-items: center;
     color: var(--light-color);
 
-    @include small-tablet {
+    @include tablet {
       flex-direction: column;
       gap: var(--gap);
       color: var(--accent-color);
-    }
-
-    @include mobile {
-      gap: 30px;
     }
   }
 
@@ -51,7 +42,7 @@
 
     @include mr(47px);
 
-    @include small-tablet {
+    @include tablet {
       @include mr(0);
     }
   }
@@ -94,7 +85,7 @@
       color: var(--silver-color);
     }
 
-    @include small-tablet {
+    @include tablet {
       font-size: 30px;
       font-weight: 500;
       line-height: 1.2;

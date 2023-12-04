@@ -46,11 +46,6 @@
       const paddingOffset = document.documentElement.clientWidth - document.body.offsetWidth;
       document.body.style.cssText = `
         overflow: hidden;
-        position: absolute;
-        top: -${scrollController.scrollPosition}px;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
         padding-right: ${paddingOffset}px;
       `;
       document.body.style.scrollBehavior = 'unset';

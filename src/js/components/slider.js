@@ -17,14 +17,14 @@ export const initializeSwiper = (swiperContainer) => {
     slideToClickedSlide: true,
     spaceBetween: gap,
     speed: 1000,
-    // loop: true,
-    // loopedSlides: 10,
+    loop: true,
+    loopedSlides: 10,
     // centeredSlides: true,
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0,
-      slideShadows: true,
-    },
+    // effect: "coverflow",
+    // coverflowEffect: {
+    //   rotate: 0,
+    //   slideShadows: true,
+    // },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
