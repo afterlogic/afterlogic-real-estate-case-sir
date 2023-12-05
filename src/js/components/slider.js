@@ -13,13 +13,16 @@ const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 export const initializeSwiper = (swiperContainer) => {
   const productSlider = new Swiper(swiperContainer, {
     modules: [Pagination, Navigation, A11y, EffectCoverflow, Keyboard],
-    // slidesPerGroup: 1,
+    slidesPerGroup: 1,
     slideToClickedSlide: true,
+    preventClicks: true,
+    preventInteractionOnTransition: true,
+    slidesOffsetBefore: -210,
     spaceBetween: gap,
     speed: 1000,
     loop: true,
+    loopAdditionalSlides: 1,
     loopPreventsSliding: true,
-
     centeredSlides: true,
     effect: "coverflow",
     coverflowEffect: {
@@ -52,57 +55,48 @@ export const initializeSwiper = (swiperContainer) => {
       320: {
         slidesPerView: 1,
         spaceBetween: 20,
-      },
-      639: {
-        slidesPerView: 1.1,
+        slidesOffsetBefore: 0,
         centeredSlides: false,
       },
-      1024: {
+      576: {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        slidesOffsetBefore: 0,
+        centeredSlides: false,
+      },
+      641: {
         slidesPerView: 1.5,
         spaceBetween: 50,
-        touchRatio: 1,
+        slidesOffsetBefore: 0,
         centeredSlides: false,
       },
+      1025: {
+        slidesPerView: 1.8,
+        spaceBetween: 40,
+        touchRatio: 1,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
+      },
       1440: {
-        // slidesPerView: 2.3,
-        slidesPerView: 1.2,
+        slidesPerView: 1.5,
         touchRatio: 0,
       }
     },
     on: {
       init: function () {
-        setHeight(this.slides[this.activeIndex]);
-
         this.slides.forEach((slide, index) => {
           slide.addEventListener('click', () => {
-
             console.log('Clicked on slide', index);
           });
         });
-
       },
       slideChange: function () {
-        setTimeout(() => {
-          const currentSlide = this.slides[this.activeIndex];
-          const previousSlide = this.slides[this.previousIndex];
+        const currentSlide = this.slides[this.activeIndex];
+        const previousSlide = this.slides[this.previousIndex];
 
-
-
-          resetHeight(previousSlide);
-          setHeight(currentSlide);
-        }, 1000);
-      },
-      // slideChangeTransitionEnd: function () {
-      //   const totalSlides = this.slides.length;
-
-      //   if (this.isEnd) {
-      //     // Если мы на последнем слайде, перейдем ко второму
-      //     this.slideTo(1, 1000, false);
-      //   } else if (this.activeIndex === 0) {
-      //     // Если мы на втором слайде, перейдем к последнему
-      //     this.slideTo(totalSlides - 2, 1000, false);
-      //   }
-      // },
+        resetHeight(previousSlide);
+        setHeight(currentSlide);
+      }
     },
   });
 }

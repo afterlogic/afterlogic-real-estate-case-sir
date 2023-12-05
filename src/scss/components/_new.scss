@@ -1,6 +1,6 @@
 .product {
   background-color: var(--black-color);
-  padding: 120px 0 92px;
+  padding: 120px 0 142px;
   border-radius: var(--border-radius-section);
   overflow: hidden;
   margin-bottom: -35px;
@@ -61,16 +61,15 @@
   }
 
   &__content {
-    position: absolute;
-    background-color: var(--black-color);
+    // position: absolute;
+    background-color: transparent;
     display: flex;
     column-gap: var(--gap);
     color: var(--light-color);
     padding-top: 25px;
-    transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1s ease 1s, transform 1s ease 1s, visibility 1s ease 1s;
+    transition: opacity 2s ease 1s, visibility 2s ease 1s;
 
     @include tablet {
       column-gap: 36px;
@@ -83,15 +82,20 @@
     }
   }
 
+  &__descr {
+    max-width: 360px;
+    flex-grow: 1;
+
+    // @include tablet {
+    //   max-width: 100%;
+    // }
+  }
+
   &__img {
-    // width: 100%;
-    // height: auto;
-    // width: auto;
     width: 100%;
     height: auto;
-    // height: 100%;
     aspect-ratio: 780 / 700;
-    transition: aspect-ratio 1s ease;
+    transition: aspect-ratio 1s ease 1s;
   }
 
   &__name {
