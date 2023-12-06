@@ -52,6 +52,12 @@ export const initializeSwiper = (swiperContainer) => {
       pageUpDown: true
     },
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesOffsetBefore: 0,
+        centeredSlides: false,
+      },
       320: {
         slidesPerView: 1,
         spaceBetween: 20,
