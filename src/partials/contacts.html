@@ -9,13 +9,34 @@
         <img loading="lazy" src="img/contacts-img.jpg" srcset="img/contacts-img_2x.jpg 2x" class="contacts__img"
           width="780" height="270" alt="Happy people meet the sunrise">
       </picture>
-      <div class="contacts__info">
+      <div class="contacts__inner">
         <p class="contacts__text">CONNECT WITH US AND LETS START YOUR <span class="contacts__highlight">PERSONAL</span>
           INVESTMENT JOURNEY TODAY.
         </p>
         <a class="btn btn--fill btn-reset" href="tel:4055550128">BOOK A CALL</a>
       </div>
-      @include('./footer.html')
+      <div class="contacts__info">
+        <div class="contacts__info-wrapper">
+          <div class="contacts__info-item contacts-social">
+            <h2 class="contacts-social-title">SOCIAL</h2>
+            <a class="contacts-social-link" href="#0" target="_blank" aria-label="Our Facebook">Facebook</a>
+            <a class="contacts-social-link" href="#0" target="_blank" aria-label="Our Instagram">Instagram</a>
+          </div>
+          <div class="contacts__info-item contacts-connection">
+            <a class="contacts-connection__email" href="mailto:hello@sirealty.com">hello@sirealty.com</a>
+            <a class="link" href="#0" aria-label="Our contacts">Say hello</a>
+          </div>
+          <nav class="contacts__info-item contacts-nav" aria-label="Secondaly Navigation">
+            <ul class="contacts-nav__list list-reset">
+              <li class="contacts-nav__item"><a href="#cases" class="contacts-nav__link">Cases</a></li>
+              <li class="contacts-nav__item"><a href="#features" class="contacts-nav__link">features</a>
+              </li>
+              <li class="contacts-nav__item"><a href="#about" class="contacts-nav__link">About us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </section>

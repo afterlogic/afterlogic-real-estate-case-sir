@@ -17,6 +17,10 @@
     flex-direction: column;
   }
 
+  @include mobile {
+    padding: 25px;
+  }
+
   &.menu--active {
     border-radius: 0;
     translate: 0;
