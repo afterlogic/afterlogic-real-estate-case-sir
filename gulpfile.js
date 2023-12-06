@@ -34,7 +34,6 @@ const path = require('path');
 const zip = require('gulp-zip');
 const rootFolder = path.basename(path.resolve());
 
-// paths
 const srcFolder = './src';
 const buildFolder = './app';
 const paths = {
@@ -50,13 +49,12 @@ const paths = {
   resourcesFolder: `${srcFolder}/resources`,
 };
 
-let isProd = false; // dev by default
+let isProd = false;
 
 const clean = () => {
   return del([buildFolder])
 }
 
-//svg sprite
 const svgSprites = () => {
   return src(paths.srcSvg)
     .pipe(
@@ -89,7 +87,6 @@ const svgSprites = () => {
     .pipe(dest(paths.buildImgFolder));
 }
 
-// scss styles
 const styles = () => {
   return src(paths.srcScss, {
       sourcemaps: !isProd
@@ -115,7 +112,6 @@ const styles = () => {
     .pipe(browserSync.stream());
 };
 
-// styles backend
 const stylesBackend = () => {
   return src(paths.srcScss)
     .pipe(plumber(
@@ -134,7 +130,6 @@ const stylesBackend = () => {
     .pipe(browserSync.stream());
 };
 
-// scripts
 const scripts = () => {
   return src(paths.srcMainJs)
     .pipe(plumber(
@@ -174,7 +169,6 @@ const scripts = () => {
     .pipe(browserSync.stream());
 }
 
-// scripts backend
 const scriptsBackend = () => {
   return src(paths.srcMainJs)
     .pipe(plumber(
