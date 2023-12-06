@@ -88,25 +88,32 @@ export const initializeSwiper = (swiperContainer) => {
         touchRatio: 0,
       }
     },
-    on: {
-      init: function () {
-        this.slides.forEach((slide, index) => {
-          slide.addEventListener('click', () => {
-            console.log('Clicked on slide', index);
-          });
-        });
-      },
-      slideChange: function () {
-        const currentSlide = this.slides[this.activeIndex];
-        const previousSlide = this.slides[this.previousIndex];
+    // on: {
+    //   init: function () {
+    //     this.slides.forEach((slide, index) => {
+    //       slide.addEventListener('click', () => {
+    //         console.log('Clicked on slide', index);
+    //       });
+    //     });
+    //   },
+    //   slideChange: function () {
+    //     const currentSlide = this.slides[this.activeIndex];
+    //     const previousSlide = this.slides[this.previousIndex];
 
-        resetHeight(previousSlide);
-        setHeight(currentSlide);
-      }
-    },
+    //     resetHeight(previousSlide);
+    //     setHeight(currentSlide);
+    //   }
+    // },
   });
-}
 
+  productSlider.on('slideChange', function () {
+    const currentSlide = this.slides[this.activeIndex];
+    const previousSlide = this.slides[this.previousIndex];
+
+    resetHeight(previousSlide);
+    setHeight(currentSlide);
+  })
+}
 
 function setHeight(slide) {
   const img = slide.querySelector('.product__img');

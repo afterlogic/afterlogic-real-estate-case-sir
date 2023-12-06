@@ -60,9 +60,6 @@
     }
   }
 
-  &__item {
-  }
-
   &__img {
     width: 100%;
     height: auto;
@@ -71,10 +68,6 @@
   }
 
   &__content {
-    // position: absolute;
-    // bottom: 0;
-    // right: 0;
-    // width: 100%;
     background-color: transparent;
     display: flex;
     column-gap: var(--gap);
@@ -82,7 +75,7 @@
     padding-top: 25px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 2s ease 1s, visibility 2s ease 1s;
+    transition: opacity 1s ease 1s, visibility 1s ease 1s;
 
     @include tablet {
       column-gap: 36px;

@@ -42,9 +42,12 @@
     display: flex;
     column-gap: 30px;
 
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
     @include small-tablet {
       padding-top: 150px;
-      margin-bottom: 80px;
       column-gap: 0;
       row-gap: 65px;
       flex-direction: column;
