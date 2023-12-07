@@ -19,7 +19,7 @@ export const initializeSwiper = (swiperContainer) => {
     preventInteractionOnTransition: true,
     slidesOffsetBefore: -210,
     spaceBetween: gap,
-    speed: 1000,
+    speed: 1500,
     loop: true,
     loopAdditionalSlides: 1,
     loopPreventsSliding: true,
@@ -87,33 +87,37 @@ export const initializeSwiper = (swiperContainer) => {
         slidesPerView: 1.5,
         touchRatio: 0,
       }
-    },
-    // on: {
-    //   init: function () {
-    //     this.slides.forEach((slide, index) => {
-    //       slide.addEventListener('click', () => {
-    //         console.log('Clicked on slide', index);
-    //       });
-    //     });
-    //   },
-    //   slideChange: function () {
-    //     const currentSlide = this.slides[this.activeIndex];
-    //     const previousSlide = this.slides[this.previousIndex];
-
-    //     resetHeight(previousSlide);
-    //     setHeight(currentSlide);
-    //   }
-    // },
+    }
   });
 
   productSlider.on('slideChange', function () {
-    const currentSlide = this.slides[this.activeIndex];
+    const activeSlide = this.slides[this.activeIndex];
     const previousSlide = this.slides[this.previousIndex];
 
     resetHeight(previousSlide);
-    setHeight(currentSlide);
+    setHeight(activeSlide);
   })
 }
+
+// function setHeight(slide) {
+//   const img = slide.querySelector('.product__img');
+//   const productItem = slide.querySelector('.product__item')
+
+//   img.style.maxHeight = '455px'
+//   productItem.style.maxHeight = productItem.scrollHeight + 'px';
+
+//   console.log(productItem);
+//   console.log(img);
+// }
+
+// function resetHeight(slide) {
+//   const img = slide.querySelector('.product__img');
+//   const productItem = slide.querySelector('.product__item')
+
+//   img.style.maxHeight = '700px'
+//   productItem.style.maxHeight = productItem.scrollHeight + 'px';
+// }
+
 
 function setHeight(slide) {
   const img = slide.querySelector('.product__img');
