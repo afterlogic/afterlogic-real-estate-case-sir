@@ -7,6 +7,8 @@ import {
   Keyboard,
 } from 'swiper/modules';
 
+import anime from 'animejs/lib/anime.es.js';
+
 const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
@@ -97,7 +99,34 @@ export const initializeSwiper = (swiperContainer) => {
     resetHeight(previousSlide);
     setHeight(activeSlide);
   })
+
+  const setHeight = (slide) => {
+    const productContent = slide.querySelector('.product__img');
+
+    anime({
+      targets: productContent,
+      maxHeight: '700px',
+      duration: 1000,
+      easing: 'easeInOutQuad',
+    });
+  };
+
+
+  const resetHeight = (slide) => {
+    const productContent = slide.querySelector('.product__img');
+
+    anime({
+      targets: productContent,
+      maxHeight: '455px',
+      duration: 1000,
+      easing: 'easeInOutQuad',
+    });
+  };
 }
+
+
+
+
 
 // function setHeight(slide) {
 //   const img = slide.querySelector('.product__img');
@@ -105,9 +134,6 @@ export const initializeSwiper = (swiperContainer) => {
 
 //   img.style.maxHeight = '455px'
 //   productItem.style.maxHeight = productItem.scrollHeight + 'px';
-
-//   console.log(productItem);
-//   console.log(img);
 // }
 
 // function resetHeight(slide) {
@@ -119,12 +145,12 @@ export const initializeSwiper = (swiperContainer) => {
 // }
 
 
-function setHeight(slide) {
-  const img = slide.querySelector('.product__img');
-  img.style.aspectRatio = 780 / 455;
-}
+// function setHeight(slide) {
+//   const img = slide.querySelector('.product__img');
+//   img.style.aspectRatio = 780 / 455;
+// }
 
-export function resetHeight(slide) {
-  const img = slide.querySelector('.product__img');
-  img.style.aspectRatio = 780 / 700;
-}
+// export function resetHeight(slide) {
+//   const img = slide.querySelector('.product__img');
+//   img.style.aspectRatio = 780 / 700;
+// }
