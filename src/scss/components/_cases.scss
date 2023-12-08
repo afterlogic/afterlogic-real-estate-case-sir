@@ -44,10 +44,20 @@
     }
   }
 
+  &__info {
+    display: block;
+    overflow: hidden;
+  }
+
   &__img {
     width: 100%;
     height: auto;
     margin-bottom: 50px;
+    transition: scale 0.5s ease;
+
+    @include hover {
+      scale: 1.1;
+    }
 
     @include mobile {
       margin-bottom: 25px;
