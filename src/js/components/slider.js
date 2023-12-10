@@ -24,11 +24,11 @@ export const initializeSwiper = (swiperContainer) => {
     loopAdditionalSlides: 1,
     loopPreventsSliding: true,
     centeredSlides: true,
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0,
-      slideShadows: true,
-    },
+    // effect: "coverflow",
+    // coverflowEffect: {
+    //   rotate: 0,
+    //   slideShadows: true,
+    // },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -90,6 +90,8 @@ export const initializeSwiper = (swiperContainer) => {
     }
   });
 
+
+
   productSlider.on('slideChange', function () {
     const activeSlide = this.slides[this.activeIndex];
     const previousSlide = this.slides[this.previousIndex];
@@ -103,11 +105,15 @@ export const initializeSwiper = (swiperContainer) => {
 function setHeight(slide) {
   const productImg = slide.querySelector('.product__img');
 
+  // productImg.style.marginBottom = '0'
   productImg.style.aspectRatio = 780 / 455;
 }
 
 export function resetHeight(slide) {
   const productImg = slide.querySelector('.product__img');
+  // const productContent = slide.querySelector('.product__content')
+  // const contentHeight = productContent.offsetHeight;
 
+  // productImg.style.marginBottom = `-${contentHeight}px`
   productImg.style.aspectRatio = 780 / 700;
 }
