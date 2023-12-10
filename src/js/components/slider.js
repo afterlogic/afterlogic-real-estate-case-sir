@@ -95,6 +95,18 @@ export const initializeSwiper = (swiperContainer) => {
   productSlider.on('slideChange', function () {
     const activeSlide = this.slides[this.activeIndex];
     const previousSlide = this.slides[this.previousIndex];
+    const productContents = activeSlide.querySelectorAll('.product__content');
+    const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
+
+    const productContentsHeight = Array.from(productContents).reduce(
+      (sumHeight, content) => sumHeight + content.offsetHeight,
+      0
+    );
+
+    allProductImgs.forEach((img) => {
+      const isCurrentSlide = img.closest('.swiper-slide') === activeSlide;
+      img.style.marginBottom = isCurrentSlide ? '0' : `-${productContentsHeight}px`;
+    });
 
     resetHeight(previousSlide);
     setHeight(activeSlide);

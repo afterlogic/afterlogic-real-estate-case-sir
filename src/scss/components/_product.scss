@@ -67,12 +67,11 @@
   }
 
   &__img {
-    margin-bottom: -200px;
     width: 100%;
     height: auto;
     aspect-ratio: 780 / 700;
     // transition: aspect-ratio 1s ease 1s;
-    transition: all 2s ease 1s;
+    transition: all 1s ease 2s;
   }
 
   // &__img {

@@ -2,17 +2,13 @@
   overflow: visible;
 
   &-wrapper {
-    transition-delay: 2s;
+    transition-delay: 1.6s;
   }
 
   &-slide {
     transform: translate3d(0, 0, 0) !important;
 
     &.swiper-slide-active {
-      .product__img {
-        margin-bottom: 0;
-      }
-
       .product__content {
         opacity: 1;
         visibility: visible;
