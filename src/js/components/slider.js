@@ -24,16 +24,15 @@ export const initializeSwiper = (swiperContainer) => {
     loopAdditionalSlides: 1,
     loopPreventsSliding: true,
     centeredSlides: true,
-    // effect: "coverflow",
-    // coverflowEffect: {
-    //   rotate: 0,
-    //   slideShadows: true,
-    // },
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      slideShadows: true,
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true,
-      dynamicBullets: true,
+      dynamicBullets: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -87,10 +86,22 @@ export const initializeSwiper = (swiperContainer) => {
         slidesPerView: 1.5,
         touchRatio: 0,
       }
-    }
+    },
+    on: {
+      init: function () {
+        const activeSlide = this.slides[this.activeIndex];
+
+        const slidersToDestroy = Array.from(document.querySelectorAll('.swiper'))
+          .filter(container => container !== swiperContainer);
+
+        slidersToDestroy.forEach(container => {
+          if (container.swiper) {
+            container.swiper.destroy(true, true);
+          }
+        });
+      },
+    },
   });
-
-
 
   productSlider.on('slideChange', function () {
     const activeSlide = this.slides[this.activeIndex];
@@ -116,16 +127,16 @@ export const initializeSwiper = (swiperContainer) => {
 
 function setHeight(slide) {
   const productImg = slide.querySelector('.product__img');
+  const productContent = slide.querySelector('.product__content')
 
-  // productImg.style.marginBottom = '0'
   productImg.style.aspectRatio = 780 / 455;
+  productContent.style.transition = 'opacity 1s ease 1s, visibility 1s ease 1s';
 }
 
 export function resetHeight(slide) {
   const productImg = slide.querySelector('.product__img');
-  // const productContent = slide.querySelector('.product__content')
-  // const contentHeight = productContent.offsetHeight;
+  const productContent = slide.querySelector('.product__content')
 
-  // productImg.style.marginBottom = `-${contentHeight}px`
   productImg.style.aspectRatio = 780 / 700;
+  productContent.style.transition = 'opacity 1s ease 0.1s, visibility 1s ease 0.1s';
 }

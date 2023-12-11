@@ -60,26 +60,13 @@
     }
   }
 
-  &__item {
-    // max-height: 700px;
-    // overflow: hidden;
-    // transition: all 0.3s ease;
-  }
-
   &__img {
     width: 100%;
     height: auto;
     aspect-ratio: 780 / 700;
-    // transition: aspect-ratio 1s ease 1s;
-    transition: all 1s ease 2s;
+    will-change: margin;
+    transition: all 1s ease 0.5s;
   }
-
-  // &__img {
-  //   width: 100%;
-  //   height: auto;
-  //   aspect-ratio: 780 / 700;
-  //   transition: aspect-ratio 1s ease 1s;
-  // }
 
   &__content {
     background-color: transparent;
@@ -89,7 +76,11 @@
     padding-top: 25px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1s ease 1s, visibility 1s ease 1s;
+
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
 
     @include tablet {
       column-gap: 36px;
