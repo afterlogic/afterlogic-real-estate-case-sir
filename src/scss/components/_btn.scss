@@ -28,15 +28,6 @@
     z-index: -1;
   }
 
-  &--fill {
-    background-color: var(--accent-color);
-    color: var(--light-color);
-
-    &::before {
-      background-color: var(--black-color);
-    }
-  }
-
   &:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 4px;
@@ -48,6 +39,20 @@
 
     &::before {
       transform: translateX(0);
+    }
+  }
+
+  &--fill {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    transition: color 0.3s ease;
+
+    &::before {
+      background-color: transparent;
+    }
+
+    @include hover {
+      color: var(--black-color);
     }
   }
 
