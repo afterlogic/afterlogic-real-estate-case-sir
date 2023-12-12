@@ -32,7 +32,8 @@ export const initializeSwiper = (swiperContainer) => {
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      dynamicBullets: true
+      dynamicBullets: true,
+      // clickable: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -73,18 +74,7 @@ export const initializeSwiper = (swiperContainer) => {
       320: {
         slidesPerView: 1,
       }
-    },
-    on: {
-      init: function () {
-        // const activeSlideInit = this.slides[this.activeIndex];
-        // const activeSlideInitImg = activeSlideInit.querySelector('.product__img')
-
-        // console.log(activeSlideInitImg);
-
-        // activeSlideInitImg.style.marginBottom = '0'
-        // activeSlideInitImg.style.aspectRatio = 780 / 700
-      },
-    },
+    }
   });
 
   productSlider.on('slideChange', function () {
@@ -93,15 +83,15 @@ export const initializeSwiper = (swiperContainer) => {
     const productContents = activeSlide.querySelectorAll('.product__content');
     const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
 
-    const productContentsHeight = Array.from(productContents).reduce(
-      (sumHeight, content) => sumHeight + content.offsetHeight,
-      0
-    );
+    // const productContentsHeight = Array.from(productContents).reduce(
+    //   (sumHeight, content) => sumHeight + content.offsetHeight,
+    //   0
+    // );
 
-    allProductImgs.forEach((img) => {
-      const isCurrentSlide = img.closest('.swiper-slide') === activeSlide;
-      img.style.marginBottom = isCurrentSlide ? '0' : `-${productContentsHeight}px`;
-    });
+    // allProductImgs.forEach((img) => {
+    //   const isCurrentSlide = img.closest('.swiper-slide') === activeSlide;
+    //   img.style.marginBottom = isCurrentSlide ? '0' : `-${productContentsHeight}px`;
+    // });
 
     resetHeight(previousSlide);
     setHeight(activeSlide);
