@@ -53,21 +53,19 @@
 
   &__link {
     position: relative;
-    overflow: hidden;
     color: currentColor;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -5px;
+      bottom: -4px;
       width: 100%;
       height: 3px;
       background-color: var(--accent-color);
+      transform-origin: right;
       transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
-      opacity: 0;
+      transition: transform 0.3s ease-in-out;
     }
 
     &:focus {
@@ -76,12 +74,9 @@
     }
 
     @include hover {
-      &::after {
-        @include fillAnimation;
-
-        animation: fillAnimation 0.3s linear forwards;
+      &::before {
+        transform-origin: left;
         transform: scaleX(1);
-        opacity: 1;
       }
     }
 

@@ -32,8 +32,7 @@ export const initializeSwiper = (swiperContainer) => {
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      dynamicBullets: true,
-      clickable: true
+      dynamicBullets: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -52,29 +51,9 @@ export const initializeSwiper = (swiperContainer) => {
       pageUpDown: true
     },
     breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        slidesOffsetBefore: 0,
-        centeredSlides: false,
-      },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        slidesOffsetBefore: 0,
-        centeredSlides: false,
-      },
-      576: {
-        slidesPerView: 1.1,
-        spaceBetween: 20,
-        slidesOffsetBefore: 0,
-        centeredSlides: false,
-      },
-      641: {
+      1440: {
         slidesPerView: 1.5,
-        spaceBetween: 50,
-        slidesOffsetBefore: 0,
-        centeredSlides: false,
+        touchRatio: 0,
       },
       1025: {
         slidesPerView: 1.8,
@@ -83,23 +62,27 @@ export const initializeSwiper = (swiperContainer) => {
         centeredSlides: false,
         slidesOffsetBefore: 0,
       },
-      1440: {
+      641: {
         slidesPerView: 1.5,
-        touchRatio: 0,
+        spaceBetween: 50,
+      },
+      576: {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+      },
+      320: {
+        slidesPerView: 1,
       }
     },
     on: {
       init: function () {
-        const activeSlide = this.slides[this.activeIndex];
+        // const activeSlideInit = this.slides[this.activeIndex];
+        // const activeSlideInitImg = activeSlideInit.querySelector('.product__img')
 
-        const slidersToDestroy = Array.from(document.querySelectorAll('.swiper'))
-          .filter(container => container !== swiperContainer);
+        // console.log(activeSlideInitImg);
 
-        slidersToDestroy.forEach(container => {
-          if (container.swiper) {
-            container.swiper.destroy(true, true);
-          }
-        });
+        // activeSlideInitImg.style.marginBottom = '0'
+        // activeSlideInitImg.style.aspectRatio = 780 / 700
       },
     },
   });
@@ -134,7 +117,7 @@ function setHeight(slide) {
   productContent.style.transition = 'opacity 1s ease 1s, visibility 1s ease 1s';
 }
 
-export function resetHeight(slide) {
+function resetHeight(slide) {
   const productImg = slide.querySelector('.product__img');
   const productContent = slide.querySelector('.product__content')
 

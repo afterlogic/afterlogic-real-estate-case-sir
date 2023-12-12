@@ -64,7 +64,6 @@
     width: 100%;
     height: auto;
     aspect-ratio: 780 / 700;
-    will-change: margin;
     transition: all 1s ease 0.5s;
   }
 
@@ -169,19 +168,13 @@
   }
 
   &__slider-block {
-    position: relative;
-
     .swiper {
-      position: absolute;
-      opacity: 0;
-      visibility: hidden;
+      display: none;
     }
 
     &.show {
       .swiper {
-        opacity: 1;
-        visibility: visible;
-        position: static;
+        display: block;
       }
     }
   }

@@ -53,5 +53,4 @@
       document.body.style.scrollBehavior = '';
     }
   };
-
 })();
