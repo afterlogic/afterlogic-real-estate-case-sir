@@ -32,7 +32,8 @@ export const initializeSwiper = (swiperContainer) => {
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      dynamicBullets: true
+      dynamicBullets: true,
+      clickable: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
