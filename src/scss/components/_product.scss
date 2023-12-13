@@ -85,7 +85,7 @@
       column-gap: 36px;
     }
 
-    @include small-tablet {
+    @include mobile {
       flex-direction: column;
       column-gap: 0px;
       row-gap: 20px;
@@ -96,9 +96,9 @@
     max-width: 360px;
     flex-grow: 1;
 
-    // @include tablet {
-    //   max-width: 100%;
-    // }
+    @include tablet {
+      max-width: 100%;
+    }
   }
 
   &__name {

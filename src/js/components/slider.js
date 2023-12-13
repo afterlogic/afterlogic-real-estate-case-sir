@@ -1,4 +1,10 @@
+import {
+  isMobileViewPort
+}
+from '../functions/check-viewport';
+
 import Swiper from 'swiper';
+
 import {
   Pagination,
   Navigation,
@@ -33,7 +39,7 @@ export const initializeSwiper = (swiperContainer) => {
       el: '.swiper-pagination',
       type: 'bullets',
       dynamicBullets: true,
-      // clickable: true
+      clickable: false,
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -52,52 +58,80 @@ export const initializeSwiper = (swiperContainer) => {
       pageUpDown: true
     },
     breakpoints: {
-      1440: {
-        slidesPerView: 1.5,
-        touchRatio: 0,
+      0: {
+        slidesPerView: 1
       },
-      1025: {
-        slidesPerView: 1.8,
-        spaceBetween: 40,
-        touchRatio: 1,
-        centeredSlides: false,
-        slidesOffsetBefore: 0,
-      },
-      641: {
-        slidesPerView: 1.5,
-        spaceBetween: 50,
+      320: {
+        slidesPerView: 1,
+        pagination: {
+          clickable: true
+        },
       },
       576: {
         slidesPerView: 1.1,
         spaceBetween: 20,
+        pagination: {
+          clickable: true
+        },
       },
-      320: {
-        slidesPerView: 1,
+      865: {
+        slidesPerView: 1.5,
+        touchRatio: 1,
+        pagination: {
+          clickable: true
+        },
+      },
+      1025: {
+        slidesPerView: 1.5,
+        spaceBetween: 40,
+        touchRatio: 0,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
+        pagination: {
+          clickable: false
+        }
+      },
+      1440: {
+        slidesPerView: 1.5,
+        touchRatio: 0,
+        pagination: {
+          clickable: false
+        }
+      }
+    },
+    on: {
+      slideChange: function () {
+        if (isMobileViewPort()) {
+          const activeSlide = this.slides[this.activeIndex];
+          const previousSlide = this.slides[this.previousIndex];
+          const productContents = activeSlide.querySelectorAll('.product__content');
+          const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
+
+          const productContentsHeight = Array.from(productContents).reduce(
+            (sumHeight, content) => sumHeight + content.offsetHeight,
+            0
+          );
+
+          allProductImgs.forEach((img) => {
+            const isCurrentSlide = img.closest('.swiper-slide') === activeSlide;
+            img.style.marginBottom = isCurrentSlide ? '0' : `-${productContentsHeight}px`;
+          });
+
+          resetHeight(previousSlide);
+          setHeight(activeSlide);
+
+        } else {
+          const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
+
+          allProductImgs.forEach((img) => {
+            img.style.marginBottom = '0'
+            img.style.aspectRatio = 780 / 700
+          });
+        }
       }
     }
   });
-
-  productSlider.on('slideChange', function () {
-    const activeSlide = this.slides[this.activeIndex];
-    const previousSlide = this.slides[this.previousIndex];
-    const productContents = activeSlide.querySelectorAll('.product__content');
-    const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
-
-    // const productContentsHeight = Array.from(productContents).reduce(
-    //   (sumHeight, content) => sumHeight + content.offsetHeight,
-    //   0
-    // );
-
-    // allProductImgs.forEach((img) => {
-    //   const isCurrentSlide = img.closest('.swiper-slide') === activeSlide;
-    //   img.style.marginBottom = isCurrentSlide ? '0' : `-${productContentsHeight}px`;
-    // });
-
-    resetHeight(previousSlide);
-    setHeight(activeSlide);
-  })
 }
-
 
 function setHeight(slide) {
   const productImg = slide.querySelector('.product__img');
