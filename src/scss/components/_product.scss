@@ -85,12 +85,15 @@
       column-gap: 36px;
     }
 
+    @include mini-tablet {
+      opacity: 1;
+      visibility: visible;
+    }
+
     @include mobile {
       flex-direction: column;
       column-gap: 0px;
       row-gap: 20px;
-      opacity: 1;
-      visibility: visible;
     }
   }
 
