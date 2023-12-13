@@ -240,7 +240,7 @@ const htmlInclude = () => {
       basepath: '@file'
     }))
     .pipe(typograf({
-      locale: ['ru', 'en-US']
+      locale: ['en-US']
     }))
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
