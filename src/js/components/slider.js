@@ -63,6 +63,9 @@ export const initializeSwiper = (swiperContainer) => {
       },
       320: {
         slidesPerView: 1,
+        touchRatio: 1,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
         pagination: {
           clickable: true
         },
@@ -70,13 +73,19 @@ export const initializeSwiper = (swiperContainer) => {
       576: {
         slidesPerView: 1.1,
         spaceBetween: 20,
+        touchRatio: 1,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
         pagination: {
           clickable: true
         },
       },
       865: {
-        slidesPerView: 1.5,
+        slidesPerView: 1.1,
+        spaceBetween: 40,
         touchRatio: 1,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
         pagination: {
           clickable: true
         },
@@ -94,6 +103,7 @@ export const initializeSwiper = (swiperContainer) => {
       1440: {
         slidesPerView: 1.5,
         touchRatio: 0,
+        spaceBetween: 60,
         pagination: {
           clickable: false
         }
