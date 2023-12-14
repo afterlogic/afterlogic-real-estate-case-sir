@@ -61,13 +61,21 @@
   }
 
   &__slider-block {
+    position: relative;
+
     .swiper {
-      display: none;
+      // display: none;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
     }
 
     &.show {
       .swiper {
-        display: block;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        // display: block;
       }
     }
   }

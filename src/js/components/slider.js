@@ -17,7 +17,7 @@ const bodyStyle = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyle.getPropertyValue('--gap'));
 
 export const initializeSwiper = (swiperContainer) => {
-  const productSlider = new Swiper(swiperContainer, {
+  return new Swiper(swiperContainer, {
     modules: [Pagination, Navigation, A11y, EffectCoverflow, Keyboard],
     slidesPerGroup: 1,
     slideToClickedSlide: true,
@@ -142,6 +142,8 @@ export const initializeSwiper = (swiperContainer) => {
     }
   });
 }
+
+
 
 function setHeight(slide) {
   const productImg = slide.querySelector('.product__img');

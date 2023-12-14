@@ -18,6 +18,8 @@
   };
 
   const handleTabClick = (e) => {
+    currentSlider.destroy();
+
     removeActiveClass();
     e.target.classList.add('active');
 

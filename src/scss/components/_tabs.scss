@@ -13,6 +13,21 @@
     line-height: 1.2;
     text-align: left;
     text-transform: uppercase;
+    transition: padding-left 0.3s ease, opacity 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      translate: 0 -50%;
+      width: 10px;
+      opacity: 0;
+      aspect-ratio: 1;
+      background-color: var(--light-color);
+      border-bottom-left-radius: var(--border-radius);
+      transition: opacity 0.3s ease;
+    }
 
     &.active {
       opacity: 1;
@@ -20,15 +35,7 @@
       position: relative;
 
       &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        translate: 0 -50%;
-        left: 0;
-        width: 10px;
-        aspect-ratio: 1;
-        background-color: var(--light-color);
-        border-bottom-left-radius: var(--border-radius);
+        opacity: 1;
       }
     }
 

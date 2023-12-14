@@ -1,0 +1,10 @@
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease-out;
+}
