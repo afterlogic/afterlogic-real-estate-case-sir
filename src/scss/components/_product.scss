@@ -60,6 +60,18 @@
     }
   }
 
+  &__slider-block {
+    .swiper {
+      display: none;
+    }
+
+    &.show {
+      .swiper {
+        display: block;
+      }
+    }
+  }
+
   &__img {
     width: 100%;
     height: auto;
@@ -81,6 +93,12 @@
       outline-offset: 2px;
     }
 
+    @include hover {
+      .product__price {
+        color: var(--accent-color);
+      }
+    }
+
     @include tablet {
       column-gap: 36px;
     }
@@ -100,6 +118,8 @@
   &__descr {
     max-width: 360px;
     flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include tablet {
       max-width: 100%;
@@ -126,6 +146,10 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__investments {
@@ -151,6 +175,7 @@
     line-height: 1;
     padding-left: 35px;
     position: relative;
+    transition: color 0.3s ease;
 
     &::after {
       content: "$";
@@ -170,17 +195,5 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 1.4;
-  }
-
-  &__slider-block {
-    .swiper {
-      display: none;
-    }
-
-    &.show {
-      .swiper {
-        display: block;
-      }
-    }
   }
 }
