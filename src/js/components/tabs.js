@@ -1,9 +1,10 @@
   import {
-    initializeSwiper
+    initializeSwiper,
+    updateAspectRatio
   } from './slider';
 
-  const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
-  let currentSlider = initializeSwiper(document.querySelector('.product__slider-block.show .swiper'));
+  const tabsBtn = document.querySelectorAll('.js-tabs-btn');
+  let currentSlider = initializeSwiper(document.querySelector('.js-slider-block.show .swiper'));
 
   const removeActiveClass = () => {
     tabsBtn.forEach((btn) => {
@@ -12,7 +13,7 @@
   };
 
   const hideAllSliderBlocks = () => {
-    document.querySelectorAll('.product__slider-block').forEach((slider) => {
+    document.querySelectorAll('.js-slider-block').forEach((slider) => {
       slider.classList.remove('show');
     });
   };

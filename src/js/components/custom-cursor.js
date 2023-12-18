@@ -1,10 +1,23 @@
-const cursor = document.querySelector('.js-cursor');
+// const cursor = document.querySelector(".js-cursor");
+// const productSlides = document.querySelectorAll('.swiper-slide');
 
-const moveCursor = (e) => {
-  const mouseY = e.clientY;
-  const mouseX = e.clientX;
+// const showCursor = () => {
+//   cursor.style.opacity = 1;
+//   cursor.classList.add('cursor--active');
+// }
 
-  cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-}
+// const hideCursor = () => {
+//   cursor.style.opacity = 0;
+//   cursor.classList.remove('cursor--active');
+// }
 
-window.addEventListener('mousemove', moveCursor)
+
+// productSlides.forEach((slide) => {
+//   slide.addEventListener("mouseenter", showCursor);
+//   slide.addEventListener("mouseleave", hideCursor);
+// });
+
+// document.addEventListener("mousemove", function (e) {
+//   cursor.style.left = e.clientX + "px";
+//   cursor.style.top = e.clientY + "px";
+// });

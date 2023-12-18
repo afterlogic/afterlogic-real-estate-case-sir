@@ -114,8 +114,8 @@ export const initializeSwiper = (swiperContainer) => {
         if (isMobileViewPort()) {
           const activeSlide = this.slides[this.activeIndex];
           const previousSlide = this.slides[this.previousIndex];
-          const productContents = activeSlide.querySelectorAll('.product__content');
-          const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
+          const productContents = activeSlide.querySelectorAll('.js-product-content');
+          const allProductImgs = document.querySelectorAll('.swiper-slide .js-product-img');
 
           const productContentsHeight = Array.from(productContents).reduce(
             (sumHeight, content) => sumHeight + content.offsetHeight,
@@ -131,7 +131,7 @@ export const initializeSwiper = (swiperContainer) => {
           setHeight(activeSlide);
 
         } else {
-          const allProductImgs = document.querySelectorAll('.swiper-slide .product__img');
+          const allProductImgs = document.querySelectorAll('.swiper-slide .js-product-img');
 
           allProductImgs.forEach((img) => {
             img.style.marginBottom = '0'
@@ -143,19 +143,17 @@ export const initializeSwiper = (swiperContainer) => {
   });
 }
 
-
-
 function setHeight(slide) {
-  const productImg = slide.querySelector('.product__img');
-  const productContent = slide.querySelector('.product__content')
+  const productImg = slide.querySelector('.js-product-img');
+  const productContent = slide.querySelector('.js-product-content')
 
   productImg.style.aspectRatio = 780 / 455;
   productContent.style.transition = 'opacity 1s ease 1s, visibility 1s ease 1s';
 }
 
 function resetHeight(slide) {
-  const productImg = slide.querySelector('.product__img');
-  const productContent = slide.querySelector('.product__content')
+  const productImg = slide.querySelector('.js-product-img');
+  const productContent = slide.querySelector('.js-product-content')
 
   productImg.style.aspectRatio = 780 / 700;
   productContent.style.transition = 'opacity 1s ease 0.1s, visibility 1s ease 0.1s';
