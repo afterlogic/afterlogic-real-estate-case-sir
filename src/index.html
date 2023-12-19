@@ -4,10 +4,10 @@
 @include('partials/head.html')
 
 <body class="page__body">
-  <a class="skiplink" href="#about">Go to main content</a>
+  <a class="skiplink" href="#about" data-scroll data-menu-item>Go to main content</a>
   <div class="site-container">
     @include('partials/header.html')
-    <main class="main" id="main">
+    <main class="main">
       @include('partials/hero.html')
       @include('partials/about.html')
       @include('partials/product.html')
