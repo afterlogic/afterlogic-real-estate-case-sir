@@ -117,8 +117,6 @@
 
   &__descr {
     max-width: 360px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     @include small-tablet {
       max-width: 100%;
