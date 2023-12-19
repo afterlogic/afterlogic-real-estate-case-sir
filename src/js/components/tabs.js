@@ -1,6 +1,5 @@
   import {
-    initializeSwiper,
-    updateAspectRatio
+    initializeSwiper
   } from './slider';
 
   const tabsBtn = document.querySelectorAll('.js-tabs-btn');

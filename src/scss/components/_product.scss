@@ -108,7 +108,7 @@
       visibility: visible;
     }
 
-    @include mobile {
+    @include small-tablet {
       flex-direction: column;
       column-gap: 0px;
       row-gap: 20px;
@@ -117,11 +117,10 @@
 
   &__descr {
     max-width: 360px;
-    flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include tablet {
+    @include small-tablet {
       max-width: 100%;
     }
   }
