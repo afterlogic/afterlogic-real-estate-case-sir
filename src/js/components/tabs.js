@@ -7,7 +7,7 @@
 
   const removeActiveClass = () => {
     tabsBtn.forEach((btn) => {
-      btn.classList.remove('active');
+      btn.classList.remove('is-current');
     });
   };
 
@@ -23,7 +23,7 @@
     }
 
     removeActiveClass();
-    e.target.classList.add('active');
+    e.target.classList.add('is-current');
 
     hideAllSliderBlocks();
 

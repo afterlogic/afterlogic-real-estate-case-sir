@@ -29,7 +29,7 @@
       transition: opacity 0.3s ease;
     }
 
-    &.active {
+    &.is-current {
       opacity: 1;
       padding-left: 22px;
       position: relative;
